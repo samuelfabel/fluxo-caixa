@@ -40,7 +40,15 @@ def merge_cobertura(coverage_dir: Path) -> tuple[int, int]:
                     line_hits[key] = max(line_hits.get(key, 0), hits)
 
     if not line_hits:
-        raise SystemExit(f"No coverage data found in {coverage_dir}")
+        xml_files = list(coverage_dir.rglob("coverage.cobertura.xml"))
+        if not xml_files:
+            raise SystemExit(
+                f"No coverage.cobertura.xml under {coverage_dir}. "
+                "Ensure tests ran with --collect:\"XPlat Code Coverage\" in the same job as build."
+            )
+        raise SystemExit(
+            f"No Domain/Application lines in {len(xml_files)} Cobertura file(s) under {coverage_dir}"
+        )
 
     covered = sum(1 for hits in line_hits.values() if hits > 0)
     total = len(line_hits)

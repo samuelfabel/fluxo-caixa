@@ -262,7 +262,7 @@ else
     private string ResolveUserName(Guid userId) =>
         _clients?.FirstOrDefault(c => c.Id == userId)?.FullName ?? userId.ToString("D");
 
-    private sealed class TransactionForm
+    protected sealed class TransactionForm
     {
         public string Description { get; set; } = string.Empty;
         public decimal Amount { get; set; }

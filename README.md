@@ -1,6 +1,6 @@
 # CashFlow — Sistema de Fluxo de Caixa
 
-[![CI](https://github.com/samuelfabel/fluxo-caixa/actions/workflows/ci.yml/badge.svg)](https://github.com/samuelfabel/fluxo-caixa/actions/workflows/ci.yml)
+[![CI](https://github.com/samuelfabel/fluxo-caixa/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/samuelfabel/fluxo-caixa/actions/workflows/ci.yml)
 [![Coverage](https://img.shields.io/badge/coverage-Domain%2BApplication%20%E2%89%A580%25-brightgreen)](https://github.com/samuelfabel/fluxo-caixa/actions/workflows/ci.yml)
 
 Projeto de **portfólio** em **C# / .NET 10** para controle de lançamentos financeiros (débitos e créditos) e consulta de **saldo diário consolidado**, com arquitetura desacoplada, resiliente e documentada (C4 + ADRs).
